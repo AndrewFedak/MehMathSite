@@ -1,10 +1,23 @@
-
 *{
     margin: 0;
     padding: 0;
     font-family: 'P22 Underground', sans-serif;
     font-style: normal;
     text-decoration: none;
+}
+.fade{
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 4.5s;
+    animation-name: fade;
+    animation-duration: 4.5s;
+}
+@-webkit-keyframes fade {
+    from{opacity: .1}
+    to{opacity: 1}
+}
+@keyframes fade {
+    from{opacity: .1}
+    to{opacity: 1}
 }
 nav {
     width: 100%;
@@ -14,32 +27,42 @@ nav {
     z-index: 2;
 }
 nav .nav_tags{
-    padding: 22px 300px 30px 128px;
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
-    justify-content: left;
-    grid-column-gap: 8%;
 }
 nav a{
     font-weight: 300;
     color: #353535;
 }
-nav a:hover{
-    text-decoration: underline #262626;
+.nav_tags a{
+    text-decoration: none;
+    font-weight: 300;
+    color: #353535;
+}
+.nav_tags a:hover{
+    text-decoration: underline black;
     transition: 0.3s;
 }
+.nav_burger_tags{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+
+
 main{
-    padding: 190px 130px 107px 130px;
+    background: #E5E5E5;
 }
 .block{
     display: grid;
     grid-template-columns: auto auto;
     justify-content: center;
 }
+.main-info h1:first-child{
+    font-style: normal;
+    font-weight: normal;
+}
 .second{
     font-style: normal;
-    font-size: 48px;
-    line-height: 58px;
 }
 .more{
     text-align: center;
@@ -48,7 +71,6 @@ main{
     border: 3px solid #353535;
     box-sizing: border-box;
     font-weight: 500;
-    font-size: 24px;
     color: #353535;
 }
 .idea{
@@ -64,9 +86,7 @@ main{
     background: #F1F3F5;
     box-shadow: 30px 30px 80px rgba(55, 84, 170, 0.1), -30px -30px 80px #FFFFFF, inset 4px 4px 20px rgba(255, 255, 255, 0.5);
 }
-.welcome-info{
-    display: block;
-}
+
 .social{
     display: grid;
     justify-content: left;
@@ -86,7 +106,6 @@ main{
 }
 .ask{
     text-align: center;
-    margin:149px 0 50px 0;
     display: block;
     border: 3px solid #353535;
     box-sizing: border-box;
@@ -113,16 +132,97 @@ main{
     color: #353535;
 }
 
-@media screen and (min-width: 1200px){
+
+
+
+
+.recent-interview{
+    padding: 110px 100px 140px 100px;
+    background: #F1F3F5;
+    box-shadow: 30px 30px 80px rgba(55, 84, 170, 0.1), -30px -30px 80px #FFFFFF, inset 4px 4px 20px rgba(255, 255, 255, 0.5);
+}
+.read-more{
+    text-align: center;
+    display: block;
+    border: 3px solid #353535;
+    box-sizing: border-box;
+    font-weight: 500;
+    color: #353535;
+}
+.recent-interview-info h1, .recent-interview-info p{
+    color: #000000;
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+
+
+.fast-menu{
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    justify-content: center;
+}
+.fast-menu a{
+    color: #000000;
+}
+.fast-menu a:hover{
+    text-decoration: underline black;
+}
+
+
+
+
+.footer-social-icons{
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+}
+
+
+
+.scroll-up{
+    height:56px;
+    width: 53px;
+    position:fixed;
+    right: 30px;
+    bottom: 60px;
+    cursor:pointer;
+    display: none;
+}
+
+
+@media screen and (min-width: 1350px){
     .block{
         grid-column-gap: 100px;
+    }
+    .main-info h1:first-child{
+        font-size: 64px;
+        line-height: 77px;
+    }
+    .second{
+        font-size: 48px;
+        line-height: 58px;
     }
     nav a{
         font-size: 14px;
     }
     nav .nav_tags{
-        padding: 22px 300px 30px 128px;
-        grid-column-gap: 8%;
+        padding: 22px 0 22px 128px;
+        grid-column-gap: 4%;
+        grid-template-columns: auto auto auto auto auto auto;
+        justify-content: left;
+    }
+    .nav_burger_tags{
+        grid-row-gap: 20px;
+        padding-left:128px;
+        padding-bottom: 30px;
+        display: none;
+    }
+    .burger{
+        display:none;
     }
     .more{
         font-size: 24px;
@@ -135,9 +235,16 @@ main{
 
 
 
-    .welcome-info{
-        width: 550px;
+
+    main{
+        padding: 190px 130px 80px 130px;
+        background: #E5E5E5;
     }
+
+
+
+
+
     .welcome-info h1{
         font-size: 48px;
         line-height: 50px;
@@ -165,13 +272,13 @@ main{
     .interview-info h1{
         font-style: normal;
         font-size: 48px;
-        line-height: 40px;
+        line-height: 60px;
     }
     .interview-info p:first-child{
         font-style: normal;
         font-weight: normal;
         font-size: 36px;
-        line-height: 20px;
+        line-height: 40px;
     }
     .interview-info p{
         font-style: normal;
@@ -182,6 +289,7 @@ main{
     .ask{
         padding: 18px 0;
         width: 300px;
+        margin:149px 0 50px 0;
     }
 
 
@@ -202,7 +310,558 @@ main{
         font-size: 14px;
         line-height: 25px;
     }
+
+
+    .recent-interview {
+        padding: 110px 100px 140px 100px;
+    }
+    .read-more{
+        margin-top:149px;
+        font-size: 24px;
+        width: 350px;
+        padding: 18px 0;
+    }
+    .recent-interview-info h1{
+        font-size: 48px;
+        line-height: 30px;
+    }
+    .recent-interview-info p{
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+
+
+    .fast-menu{
+        grid-column-gap: 80px;
+    }
+    .fast-menu a{
+        font-size: 18px;
+        line-height: 36px;
+    }
+
+
+
+    .footer-social-icons{
+        grid-column-gap: 80px;
+    }
 }
-/*@media (min-width: 930px) and (max-width: 1200px){*/
-/*    */
-/*}*/
+
+@media screen and (min-width: 1100px) and (max-width: 1350px){
+    .block{
+        grid-column-gap: 35px;
+    }
+    .main-info h1:first-child{
+        font-size: 55px;
+        line-height: 77px;
+    }
+    .second{
+        font-size: 40px;
+        line-height: 58px;
+    }
+    nav a{
+        font-size: 16px;
+    }
+    nav .nav_tags{
+        padding: 22px 0 22px 128px;
+        grid-column-gap: 4%;
+        grid-template-columns: auto auto auto auto auto auto;
+        justify-content: left;
+    }
+    .nav_burger_tags{
+        grid-row-gap: 20px;
+        padding-left:128px;
+        padding-bottom: 30px;
+        display: none;
+    }
+    .burger{
+        display:none;
+    }
+    .more{
+        font-size: 22px;
+        width: 330px;
+        padding: 20px 0;
+    }
+    .idea{
+        height:400px;
+    }
+
+
+
+
+    main{
+        padding: 190px 100px 80px 100px;
+        background: #E5E5E5;
+    }
+
+
+
+
+
+    .welcome-info h1{
+        font-size: 44px;
+        line-height: 50px;
+    }
+    .info p{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .social .icon img{
+        margin-left: 11px;
+        width: 50px;
+        height: 50px;
+    }
+    .social{
+        grid-column-gap: 30px;
+    }
+    .social .icon{
+        width: 70px;
+        height: 90px;
+    }
+
+
+    .interview-info h1{
+        font-style: normal;
+        font-size: 44px;
+        line-height: 60px;
+    }
+    .interview-info p:first-child{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 34px;
+        line-height: 40px;
+    }
+    .interview-info p{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .ask{
+        padding: 18px 0;
+        width: 300px;
+        margin:100px 0 50px 0;
+    }
+
+
+
+    .event-social-icon  img{
+        height: 40px;
+        width: 40px;
+        margin-right: 10px;
+    }
+    .event-social-icon a:first-child{
+        margin-right: 80px;
+    }
+    .recent-events .event h1{
+        font-size: 48px;
+        line-height: 56px;
+    }
+    .recent-events .event p{
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+
+    .recent-interview {
+        padding: 110px 80px 140px 80px;
+        grid-column-gap: 40px;
+    }
+    .read-more{
+        margin-top:120px;
+        font-size: 22px;
+        width: 270px;
+        padding: 14px 0;
+    }
+    .recent-interview-info h1{
+        font-size: 42px;
+        line-height: 30px;
+    }
+    .recent-interview-info p{
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+
+
+    .fast-menu{
+        grid-column-gap: 40px;
+    }
+    .fast-menu a{
+        font-size: 18px;
+        line-height: 36px;
+    }
+
+
+
+    .footer-social-icons{
+        grid-column-gap: 40px;
+    }
+}
+@media (min-width: 900px) and (max-width: 1100px){
+    nav a{
+        font-size: 17px;
+    }
+    nav .nav_tags{
+        padding: 22px 0 22px 30px;
+        grid-column-gap: 4%;
+        grid-template-columns: auto auto auto auto auto auto;
+        justify-content: left;
+    }
+    .nav_burger_tags{
+        grid-row-gap: 20px;
+        padding-left:128px;
+        padding-bottom: 30px;
+        display: none;
+    }
+    .burger{
+        display:none;
+    }
+
+
+
+
+
+    main{
+        padding: 190px 30px 80px 30px;
+        background: #E5E5E5;
+    }
+    .block{
+        grid-column-gap: 10px;
+    }
+    .main-info h1:first-child{
+        font-size: 50px;
+        line-height: 77px;
+    }
+    .second{
+        font-size: 36px;
+        line-height: 58px;
+    }
+    .more{
+         font-size: 18px;
+         width: 290px;
+         padding: 18px 0;
+     }
+    .idea{
+        height:370px;
+    }
+
+
+
+    .welcome{
+        padding-left:10px;
+        padding-right: 10px;
+        grid-column-gap: 30px;
+    }
+    .welcome-info h1{
+        font-size: 35px;
+        line-height: 50px;
+    }
+    .info p{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 25px;
+    }
+    .social .icon img{
+        margin-left: 11.5px;
+        width: 48px;
+        height: 48px;
+    }
+    .social{
+        grid-column-gap: 15px;
+    }
+    .social .icon{
+        width: 70px;
+        height: 90px;
+    }
+
+
+
+    .interview {
+        margin: 120px 0;
+        padding: 80px 30px;
+    }
+    .interview-info h1{
+        font-style: normal;
+        font-size: 44px;
+        line-height: 60px;
+    }
+    .interview-info p:first-child{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .interview img{
+        height: 270px;
+    }
+    .interview-info p{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .ask{
+        padding: 18px 0;
+        width: 270px;
+        margin:80px 0 50px 0;
+    }
+
+
+    .recent-events{
+        grid-template-columns: auto;
+        grid-row-gap: 40px;
+    }
+    .event-social-icon  img{
+        height: 40px;
+        width: 40px;
+        margin-right: 10px;
+    }
+    .event-social-icon a:first-child{
+        margin-right: 80px;
+    }
+    .recent-events .event h1{
+        font-size: 48px;
+        line-height: 56px;
+    }
+    .recent-events .event p{
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+
+    .recent-interview {
+        padding: 80px 60px 120px 60px;
+        grid-column-gap: 100px;
+    }
+    .read-more{
+        margin-top:120px;
+        font-size: 20px;
+        width: 250px;
+        padding: 13px 0;
+    }
+    .recent-interview-info h1{
+        font-size: 42px;
+        line-height: 30px;
+    }
+    .recent-interview-info p{
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+
+
+    .fast-menu{
+        grid-column-gap: 30px;
+    }
+    .fast-menu a{
+        font-weight: bold;
+        font-size: 17px;
+        line-height: 36px;
+    }
+
+
+
+    .footer-social-icons{
+        grid-column-gap: 40px;
+    }
+}
+@media screen and (max-width: 899px) {
+    nav a{
+        font-size: 23px;
+    }
+    nav .nav_tags{
+        padding: 0 10px 12px 0;
+        grid-template-columns:auto;
+        justify-content:right;
+    }
+    nav .nav_tags a{
+        display: none;
+    }
+    .nav_burger_tags{
+        grid-row-gap: 20px;
+        padding-left:40px;
+        padding-bottom: 30px;
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .invisible{
+        display: none;
+    }
+    .nav_burger_tags a:hover{
+        text-decoration: underline black;
+    }
+    .burger{
+        margin-top: 10px;
+        display:block;
+        cursor: pointer;
+    }
+
+
+
+
+
+    main{
+        padding: 190px 3px 80px 3px;
+        background: #E5E5E5;
+    }
+    .block{
+        grid-column-gap: 20px;
+    }
+    .main-info h1:first-child{
+        font-size: 35px;
+        line-height: 37px;
+    }
+    .second{
+        font-size: 26px;
+        line-height: 38px;
+    }
+    .more{
+        margin:80px 0 125px 0;
+        font-size: 16px;
+        width: 220px;
+        padding: 18px 0;
+    }
+    .idea{
+        height:300px;
+    }
+
+
+
+    .welcome{
+        padding-left:00px;
+        padding-right: 00px;
+        grid-column-gap: 10px;
+    }
+    .welcome-info h1{
+        font-size: 30px;
+        line-height: 50px;
+    }
+    .info p{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .social .icon img{
+        margin-left: 16px;
+        width: 38px;
+        height: 38px;
+    }
+    .social{
+        grid-column-gap: 10px;
+    }
+    .social .icon{
+        width: 70px;
+        height: 90px;
+    }
+    .tree{
+        height: 250px;
+        margin-top: 80px;
+    }
+
+
+
+    .interview {
+        margin: 120px 0;
+        padding: 80px 30px;
+    }
+    .interview-info h1{
+        font-style: normal;
+        font-size: 33px;
+        line-height: 60px;
+    }
+    .interview-info p:first-child{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 40px;
+    }
+    .interview img{
+        height: 230px;
+        margin-top: 90px;
+    }
+    .interview-info p{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 30px;
+    }
+    .ask{
+        padding: 18px 0;
+        width: 230px;
+        margin:30px 0 50px 0;
+    }
+
+
+    .recent-events{
+        grid-template-columns: auto;
+        grid-row-gap: 40px;
+    }
+    .event-social-icon  img{
+        height: 40px;
+        width: 40px;
+        margin-right: 10px;
+    }
+    .event-social-icon a:first-child{
+        margin-right: 80px;
+    }
+    .recent-events .event h1{
+        font-size: 48px;
+        line-height: 56px;
+    }
+    .recent-events .event p{
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+
+    .recent-interview {
+        padding: 40px 0 80px 0;
+        grid-column-gap: 00px;
+    }
+    .read-more{
+        margin-top:60px;
+        font-size: 14px;
+        width: 230px;
+        padding: 13px 0;
+    }
+    .recent-interview-info h1{
+        font-size: 35px;
+        line-height: 30px;
+    }
+    .recent-interview-info p{
+        font-size: 15px;
+        line-height: 30px;
+    }
+
+
+
+    .fast-menu{
+        grid-column-gap: 30px;
+    }
+    .fast-menu a{
+        width: 80%;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 36px;
+    }
+
+
+
+    .footer-social-icons{
+        grid-column-gap: 40px;
+    }
+    .scroll-up{
+        height:60px;
+        width: 57px;
+        position:fixed;
+        right: 3px;
+        bottom: 40px;
+        cursor:pointer;
+        display: none;
+    }
+}
